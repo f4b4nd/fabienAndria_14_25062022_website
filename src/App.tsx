@@ -1,14 +1,30 @@
 import React from 'react'
 
+import { BrowserRouter as Router, Routes,  Route } from 'react-router-dom'
+
 import './App.css'
 
-import { TableWrapper } from 'f4b4nd-table-plugin'
+import HomePage from './pages/home'
+
+import EmployeesPage from './pages/employees'
+
 
 function App () {
+
     return (
-        <>
-        <TableWrapper />
-        </>
+        
+        <Router>
+            
+            <Routes>
+
+                <Route path="/" element={ <HomePage /> }/>
+
+                <Route path="employees" element={ <EmployeesPage /> }/>
+
+            </Routes>
+
+        </Router>
+        
     )
 }
 
