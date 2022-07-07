@@ -6,3 +6,11 @@ export const Container = styled.form`
     flex-direction: column;
     row-gap: 1em;
 `
+
+export const Button = styled.button`
+    height: 30px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-size: 1.1em;
+`

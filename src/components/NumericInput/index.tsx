@@ -1,6 +1,6 @@
 import { Container } from "./style"
 
-const NumericInput = ({inputName}: INumericInput) => {
+const NumericInput = ({inputName, setFunction}: INumericInput) => {
 
     return (
         <Container>
@@ -9,7 +9,7 @@ const NumericInput = ({inputName}: INumericInput) => {
 
             <input 
                 type="number" inputMode="numeric" id={inputName}
-                onChange={(e) => console.log(e.target.value)}
+                onChange={(e) => setFunction(e.target.value)}
             />
 
         </Container>

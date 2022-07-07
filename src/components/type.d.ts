@@ -1,21 +1,26 @@
+
 interface ITextInput {
-    inputName: string
+    inputName: string,
+    setFunction: React.Dispatch<React.SetStateAction<string>>
 }
 
 interface INumericInput {
-    inputName: string
+    inputName: string,
+    setFunction: React.Dispatch<React.SetStateAction<string>>,
 }
 
 interface IDateInput {
-    inputName: string
+    inputName: string,
+    setFunction: React.Dispatch<React.SetStateAction<string>>,
 }
 
 interface ISelectInput {
     inputName: string,
-    options: string[]
+    options: string[],
+    setFunction: React.Dispatch<React.SetStateAction<string>>,
 }
 
 interface IFieldset {
     legendName: string,
-    children?: React.ReactNode
+    children?: React.ReactNode,
 }

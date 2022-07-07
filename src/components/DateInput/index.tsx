@@ -1,6 +1,6 @@
 import { Container } from "./style"
 
-const DateInput = ({inputName}: IDateInput) => {
+const DateInput = ({inputName, setFunction}: IDateInput) => {
 
     return (
         <Container>
@@ -9,7 +9,7 @@ const DateInput = ({inputName}: IDateInput) => {
 
             <input 
                 type="date" id={inputName}
-                onChange={(e) => console.log(e.target.value)}
+                onChange={(e) => setFunction(e.target.value)}
             />
 
         </Container>

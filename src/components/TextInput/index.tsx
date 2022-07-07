@@ -1,6 +1,6 @@
 import { Container } from "./style"
 
-const TextInput = ({inputName}: ITextInput) => {
+const TextInput = ({inputName, setFunction}: ITextInput) => {
 
     return (
         <Container>
@@ -9,7 +9,7 @@ const TextInput = ({inputName}: ITextInput) => {
 
             <input 
                 type="text" id={inputName}
-                onChange={(e) => console.log(e.target.value)}
+                onChange={(e) => setFunction(e.target.value)}
             />
 
         </Container>
