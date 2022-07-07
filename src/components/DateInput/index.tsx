@@ -9,6 +9,7 @@ const DateInput = ({inputName, setFunction}: IDateInput) => {
 
             <input 
                 type="date" id={inputName}
+                required
                 onChange={(e) => setFunction(e.target.value)}
             />
 

@@ -9,6 +9,10 @@ import SelectInput from "../SelectInput"
 import NumericInput from "../NumericInput"
 import Fieldset from "../Fieldset"
 
+import Modal from "../Modal"
+
+import { DepartmentSelectOptions, stateSelectOptions } from '../../fixtures/selectOptions'
+
 const NewEmployeeForm = () => {
 
     const [firstName, setFirstName] = useState<string>("")
@@ -22,6 +26,8 @@ const NewEmployeeForm = () => {
     const [zipCode, setZipCode] = useState<string>("")
 
     const [department, setDepartment] = useState<string>("")
+
+    const [modalIsVisible, setModalIsVisible] = useState<boolean>(false)
 
     const { dispatch } = useContext(EmployeeContext)
 
@@ -46,44 +52,50 @@ const NewEmployeeForm = () => {
 
         dispatch(addEmployeeAction)
     
+        setModalIsVisible(true)
+
     }
 
     return (
-        <Container>
+        <>
+            <Modal isVisible={modalIsVisible} setIsVisible={setModalIsVisible} />
 
-            <TextInput inputName="FirstName" setFunction={setFirstName} />
-            
-            <TextInput inputName="LastName" setFunction={setLastName}/>
-            
-            <DateInput inputName="DateOfBirth" setFunction={setDateOfBirth} />
-            
-            <DateInput inputName="StartDate" setFunction={setStartDate} />
-            
-            <Fieldset legendName="Adress">
+            <Container onSubmit={handleSubmit}>
 
-                <TextInput inputName="Street" setFunction={setStreet} />
+                <TextInput inputName="FirstName" setFunction={setFirstName} />
+                
+                <TextInput inputName="LastName" setFunction={setLastName}/>
+                
+                <DateInput inputName="DateOfBirth" setFunction={setDateOfBirth} />
+                
+                <DateInput inputName="StartDate" setFunction={setStartDate} />
+                
+                <Fieldset legendName="Adress">
 
-                <TextInput inputName="City" setFunction={setCity} />
+                    <TextInput inputName="Street" setFunction={setStreet} />
+
+                    <TextInput inputName="City" setFunction={setCity} />
+
+                    <SelectInput 
+                        inputName="State" 
+                        options={stateSelectOptions} 
+                        setFunction={setState} 
+                    />
+
+                    <NumericInput inputName="ZipCode" setFunction={setZipCode} />
+
+                </Fieldset>
 
                 <SelectInput 
-                    inputName="State" 
-                    options={['A', 'B']} 
-                    setFunction={setState} 
+                    inputName="Department" 
+                    options={DepartmentSelectOptions} 
+                    setFunction={setDepartment} 
                 />
 
-                <NumericInput inputName="ZipCode" setFunction={setZipCode} />
+                <Button type="submit">Save</Button>
 
-            </Fieldset>
-
-            <SelectInput 
-                inputName="Department" 
-                options={['C', 'D']} 
-                setFunction={setDepartment} 
-            />
-
-            <Button type="submit" onClick={(e) => handleSubmit(e)}>Save</Button>
-
-        </Container>
+            </Container>
+        </>
     )
 }
 

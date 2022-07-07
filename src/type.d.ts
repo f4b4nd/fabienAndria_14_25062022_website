@@ -25,6 +25,11 @@ interface IFieldset {
     children?: React.ReactNode,
 }
 
+interface IModal {
+    isVisible: boolean,
+    setIsVisible: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
 interface IEmployee {
     firstName: string,
     lastName: string,

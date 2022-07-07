@@ -9,6 +9,7 @@ const TextInput = ({inputName, setFunction}: ITextInput) => {
 
             <input 
                 type="text" id={inputName}
+                required
                 onChange={(e) => setFunction(e.target.value)}
             />
 

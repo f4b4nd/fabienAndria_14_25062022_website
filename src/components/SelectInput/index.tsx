@@ -1,6 +1,6 @@
 import { Container } from "./style"
 
-const SelectInput = ({inputName, options}: ISelectInput) => {
+const SelectInput = ({inputName, options, setFunction}: ISelectInput) => {
 
     return (
         <Container>
@@ -9,7 +9,8 @@ const SelectInput = ({inputName, options}: ISelectInput) => {
 
             <select 
                 id={inputName}
-                onChange={(e) => console.log(e.target.value)}
+                required
+                onChange={(e) => {setFunction(e.target.value); console.log('s', e.target.value)}}
             >
 
                 {options.map((option, idx) => (

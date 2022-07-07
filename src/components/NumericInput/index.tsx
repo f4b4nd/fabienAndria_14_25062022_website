@@ -9,6 +9,7 @@ const NumericInput = ({inputName, setFunction}: INumericInput) => {
 
             <input 
                 type="number" inputMode="numeric" id={inputName}
+                required
                 onChange={(e) => setFunction(e.target.value)}
             />
 
