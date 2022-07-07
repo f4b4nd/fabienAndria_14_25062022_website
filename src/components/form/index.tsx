@@ -1,15 +1,15 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { EmployeeContext } from '../../EmployeeContext'
 
 import { Container, Button } from "./style"
 
-import DateInput from "../DateInput"
-
 import TextInput from "../TextInput"
-import Fieldset from "../Fieldset"
+import DateInput from "../DateInput"
 import SelectInput from "../SelectInput"
 import NumericInput from "../NumericInput"
+import Fieldset from "../Fieldset"
 
-const Form = () => {
+const NewEmployeeForm = () => {
 
     const [firstName, setFirstName] = useState<string>("")
     const [lastName, setLastName] = useState<string>("")
@@ -18,16 +18,36 @@ const Form = () => {
 
     const [street, setStreet] = useState<string>("")
     const [city, setCity] = useState<string>("")
-    const [stateRegion, setStateRegion] = useState<string>("")
+    const [state, setState] = useState<string>("")
     const [zipCode, setZipCode] = useState<string>("")
 
     const [department, setDepartment] = useState<string>("")
+
+    const { dispatch } = useContext(EmployeeContext)
 
     const handleSubmit = (e: React.FormEvent) => {
         
         e.preventDefault()
 
+        const addEmployeeAction: Action = {
+            type: 'ADD_EMPLOYEE',
+            payload: {
+                firstName,
+                lastName,
+                dateOfBirth,
+                startDate,
+                street,
+                city,
+                state,
+                zipCode,
+                department,
+            }
+        }
+
+        dispatch(addEmployeeAction)
+    
     }
+
     return (
         <Container>
 
@@ -48,7 +68,7 @@ const Form = () => {
                 <SelectInput 
                     inputName="State" 
                     options={['A', 'B']} 
-                    setFunction={setStateRegion} 
+                    setFunction={setState} 
                 />
 
                 <NumericInput inputName="ZipCode" setFunction={setZipCode} />
@@ -67,4 +87,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default NewEmployeeForm
