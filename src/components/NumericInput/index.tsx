@@ -1,4 +1,4 @@
-import { Container } from "./style"
+import { Container, Input } from "./style"
 
 const NumericInput = ({inputName, setFunction}: INumericInput) => {
 
@@ -7,7 +7,7 @@ const NumericInput = ({inputName, setFunction}: INumericInput) => {
 
             <label htmlFor={inputName}>{inputName}</label>
 
-            <input 
+            <Input 
                 type="number" inputMode="numeric" id={inputName}
                 required
                 onChange={(e) => setFunction(e.target.value)}

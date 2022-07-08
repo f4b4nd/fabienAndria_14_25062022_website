@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Container } from "./style"
+import { Container, Select } from "./style"
 
 const SelectInput = ({inputName, options, setFunction}: ISelectInput) => {
 
@@ -13,7 +13,7 @@ const SelectInput = ({inputName, options, setFunction}: ISelectInput) => {
 
             <label htmlFor={inputName}>{inputName}</label>
 
-            <select 
+            <Select 
                 id={inputName}
                 required
                 
@@ -24,7 +24,7 @@ const SelectInput = ({inputName, options, setFunction}: ISelectInput) => {
                     <option key={idx} value={option}>{option}</option>
                 ))}
 
-            </select>
+            </Select>
 
         </Container>
     )

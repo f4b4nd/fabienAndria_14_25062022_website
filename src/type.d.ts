@@ -31,15 +31,15 @@ interface IModal {
 }
 
 interface IEmployee {
-    firstName: string,
-    lastName: string,
-    dateOfBirth: string,
-    startDate: string,
-    street: string,
-    city: string,
-    state: string,
-    zipCode: string,
-    department: string,
+    "First Name": string,
+    "Last Name": string,
+    "Date of Birth": string,
+    "Start Date" : string,
+    "Street" : string,
+    "City" : string,
+    "State" : string,
+    "Zip Code" : string,
+    "Department": string,
 }
 
 interface IEmployeeContext {

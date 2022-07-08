@@ -1,4 +1,19 @@
-main {
-  max-width: 800px;
+main.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main.employees {
+  max-width: 900px;
   margin: 0 auto;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }

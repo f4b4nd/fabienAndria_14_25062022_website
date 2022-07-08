@@ -23,15 +23,15 @@ export const EmployeeProvider = ({children}: IEmployeeProvider) => {
 
     const initialState: IEmployee[] = [
         {
-            firstName: "",
-            lastName: "",
-            dateOfBirth: "",
-            startDate: "",
-            street: "",
-            city: "",
-            state: "",
-            zipCode: "",
-            department: "",
+            "First Name" : "",
+            "Last Name" : "",
+            "Date of Birth": "",
+            "Start Date" : "",
+            "Street" : "",
+            "City" : "",
+            "State" : "",
+            "Zip Code" : "",
+            "Department": "",
         }
     ]
 

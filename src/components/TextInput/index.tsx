@@ -1,4 +1,4 @@
-import { Container } from "./style"
+import { Container, Input } from "./style"
 
 const TextInput = ({inputName, setFunction}: ITextInput) => {
 
@@ -7,7 +7,7 @@ const TextInput = ({inputName, setFunction}: ITextInput) => {
 
             <label htmlFor={inputName}>{inputName}</label>
 
-            <input 
+            <Input 
                 type="text" id={inputName}
                 required
                 onChange={(e) => setFunction(e.target.value)}

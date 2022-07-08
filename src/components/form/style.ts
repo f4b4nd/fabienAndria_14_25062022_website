@@ -9,7 +9,7 @@ export const Container = styled.form`
 
 export const Button = styled.button`
     height: 30px;
-    width: 200px;
+    width: 150px;
     margin: 0 auto;
     border-radius: 5px;
     font-size: 1.1em;

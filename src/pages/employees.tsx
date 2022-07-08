@@ -11,13 +11,16 @@ const EmployeesPage: React.FC = () => {
     const { state } = useContext(EmployeeContext)
 
     return (
-        <main className="Employees"> 
+        <main className="employees"> 
 
-            Employees 
+            <h1> Employees </h1> 
 
             <TableWrapper initialData={state} />
             
-            <Link to="/">Home</Link>
+            <div className="center">
+                <Link to="/">Home</Link>
+            </div>
+
         </main>
     )
 }

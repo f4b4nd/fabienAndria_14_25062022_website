@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 
 const HomePage: React.FC = () => {
     return (
-        <main className="homepage"> 
+        <main className="home"> 
         
             <h1> HRnet </h1>
-
-            <Link to="employees"> View current Employees </Link>
+            
+            <div className="center">
+                <Link to="employees"> View current Employees </Link>
+            </div>
 
             <h2>Create Employee</h2>
              

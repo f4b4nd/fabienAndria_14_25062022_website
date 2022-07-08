@@ -38,15 +38,15 @@ const NewEmployeeForm = () => {
         const addEmployeeAction: Action = {
             type: 'ADD_EMPLOYEE',
             payload: {
-                firstName,
-                lastName,
-                dateOfBirth,
-                startDate,
-                street,
-                city,
-                state,
-                zipCode,
-                department,
+                "First Name" : firstName,
+                "Last Name" : lastName,
+                "Date of Birth": dateOfBirth,
+                "Start Date" : startDate,
+                "Street" : street,
+                "City" : city,
+                "State" : state,
+                "Zip Code" : zipCode,
+                "Department": department,
             }
         }
 
@@ -62,15 +62,15 @@ const NewEmployeeForm = () => {
 
             <Container onSubmit={handleSubmit}>
 
-                <TextInput inputName="FirstName" setFunction={setFirstName} />
+                <TextInput inputName="First Name" setFunction={setFirstName} />
                 
-                <TextInput inputName="LastName" setFunction={setLastName}/>
+                <TextInput inputName="Last Name" setFunction={setLastName}/>
                 
-                <DateInput inputName="DateOfBirth" setFunction={setDateOfBirth} />
+                <DateInput inputName="Date Of Birth" setFunction={setDateOfBirth} />
                 
-                <DateInput inputName="StartDate" setFunction={setStartDate} />
+                <DateInput inputName="Start Date" setFunction={setStartDate} />
                 
-                <Fieldset legendName="Adress">
+                <Fieldset legendName="Address">
 
                     <TextInput inputName="Street" setFunction={setStreet} />
 
@@ -82,7 +82,7 @@ const NewEmployeeForm = () => {
                         setFunction={setState} 
                     />
 
-                    <NumericInput inputName="ZipCode" setFunction={setZipCode} />
+                    <NumericInput inputName="Zip Code" setFunction={setZipCode} />
 
                 </Fieldset>
 

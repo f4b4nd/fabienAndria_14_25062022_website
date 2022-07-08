@@ -1,4 +1,4 @@
-import { Container } from "./style"
+import { Container, Input } from "./style"
 
 const DateInput = ({inputName, setFunction}: IDateInput) => {
 
@@ -7,7 +7,7 @@ const DateInput = ({inputName, setFunction}: IDateInput) => {
 
             <label htmlFor={inputName}>{inputName}</label>
 
-            <input 
+            <Input 
                 type="date" id={inputName}
                 required
                 onChange={(e) => setFunction(e.target.value)}
