@@ -54,6 +54,12 @@ const NewEmployeeForm = () => {
     
         setModalIsVisible(true)
 
+        resetForm(e.target as HTMLFormElement)
+
+    }
+
+    const resetForm = (eventTarget: HTMLFormElement) => {
+        eventTarget.reset()
     }
 
     return (
