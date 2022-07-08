@@ -53,6 +53,5 @@ type Action = {
 }
 
 interface IEmployeeProvider {
-    initialState?: IEmployee[],
     children?: React.ReactNode
 }

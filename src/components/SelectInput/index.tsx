@@ -17,7 +17,7 @@ const SelectInput = ({inputName, options, setFunction}: ISelectInput) => {
                 id={inputName}
                 required
                 
-                onChange={(e) => {setFunction(e.target.value); console.log('s', e.target.value)}}
+                onChange={(e) => setFunction(e.target.value)}
             >
 
                 {options.map((option, idx) => (

@@ -18,7 +18,22 @@ function employeeReducer (state: IEmployee[], action: Action) {
     }
 }
 
-export const EmployeeProvider = ({initialState = [], children}: IEmployeeProvider) => {
+
+export const EmployeeProvider = ({children}: IEmployeeProvider) => {
+
+    const initialState: IEmployee[] = [
+        {
+            firstName: "",
+            lastName: "",
+            dateOfBirth: "",
+            startDate: "",
+            street: "",
+            city: "",
+            state: "",
+            zipCode: "",
+            department: "",
+        }
+    ]
 
     const [state, dispatch] = useReducer(employeeReducer, initialState)
 
